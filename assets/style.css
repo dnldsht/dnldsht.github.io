@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "GroteskBold";
+  src: url("~assets/GroteskBold.woff") format('woff');
+}
+
+* {
+  font-family: GroteskBold;
+}
