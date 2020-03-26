@@ -1,8 +1,11 @@
 <template>
   <div id="container">
     <div id="intro">
-      hi. my name is
-      <a href="#contact">donald</a>. im a front end developer who cares about design.
+      <h1>
+        hi. my name is
+        <a href="#contact">donald</a>.
+      </h1>
+      <h2>im a front end developer who cares about design.</h2>
     </div>
 
     <div id="contact">
