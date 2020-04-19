@@ -6,3 +6,27 @@
 * {
   font-family: GroteskBold;
 }
+
+a {
+  color: #999;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.x-large-text {
+  font-size: 6rem;
+  line-height: 0.99em;
+  letter-spacing: -0.02em;
+}
+
+@media only screen and (max-device-width: 900px) and (min-device-width: 0px) {
+  .x-large-text {
+    font-size: 3rem;
+    line-height: 0.99em;
+    letter-spacing: -0.02em;
+  }
+}

@@ -12,6 +12,8 @@
     "deploy": "push-dir --dir=dist --branch=master --cleanup"
   },
   "dependencies": {
+    "animate.css": "^3.7.2",
+    "fullpage-vue": "^2.0.0",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
