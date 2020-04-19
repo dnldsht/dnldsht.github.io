@@ -5,7 +5,7 @@
       <a href="#contact">donald</a>.
     </h1>
     <h2
-      v-animate="{value: 'bounceInRight', delay: 600}"
+      v-animate="{value: 'bounceInLeft', delay: 600}"
     >im a front end developer who cares about design.</h2>
   </div>
 </template>
