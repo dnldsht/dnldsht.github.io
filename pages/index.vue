@@ -1,6 +1,7 @@
 <template>
-  <div id="container" class="fullpage-container">
+  <div class="fullpage-container">
     <div class="fullpage-wp" v-fullpage="opts">
+      <projects class="page"></projects>
       <intro class="page"></intro>
       <contact class="page"></contact>
     </div>
@@ -8,15 +9,16 @@
 </template>
 
 <style lang="css">
-#container {
+.fullpage-container {
   position: absolute;
 }
 </style>
 <script>
 import Intro from "~/components/intro";
 import Contact from "~/components/contact";
+import Projects from "~/components/projects";
 export default {
-  components: { Intro, Contact },
+  components: { Intro, Contact, Projects },
   data: () => ({
     opts: {
       start: 0,
