@@ -1,8 +1,8 @@
 <template>
   <div class="fullpage-container">
     <div class="fullpage-wp" v-fullpage="opts">
-      <projects class="page"></projects>
       <intro class="page"></intro>
+      <projects class="page"></projects>
       <contact class="page"></contact>
     </div>
   </div>
