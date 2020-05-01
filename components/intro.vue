@@ -1,29 +1,24 @@
 <template>
-  <div id="intro" class="x-large-text">
-    <h1 v-animate="{value: 'bounceInLeft'}">
+  <div id="me" class="container px-3 flex flex-col justify-center">
+    <h1 class="x-large-text">
       hi. my name is
       <a href="#contact">donald</a>.
     </h1>
-    <h2
-      v-animate="{value: 'bounceInLeft', delay: 600}"
-    >im a front end developer who cares about design.</h2>
+    <h2 class="x-large-text">im a front end developer that cares about design.</h2>
+
+    <scroll-tip @click.native="scroll"></scroll-tip>
   </div>
 </template>
-<style>
-#intro {
+<style >
+#me {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 4rem;
-}
-
-@media only screen and (max-device-width: 900px) and (min-device-width: 0px) {
-  #intro {
-    padding: 0 1rem;
-  }
+  position: relative;
 }
 </style>
 
 <script>
-export default {};
+import scrollable from "~/mixins/scrollable";
+export default {
+  mixins: [scrollable]
+};
 </script>

@@ -30,14 +30,21 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/fullpage'
+    '~/plugins/fullpage',
   ],
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
-
+    '@nuxtjs/tailwindcss',
   ],
+
+  tailwindcss: {
+    configPath: '~/config/tailwind.config.js',
+    cssPath: '~/assets/css/tailwind.css',
+    purgeCSSInDev: false,
+    exposeConfig: false
+  },
   /*
   ** Nuxt.js modules
   */

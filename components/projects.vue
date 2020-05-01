@@ -16,6 +16,7 @@
         </div>
       </div>
     </div>
+    <scroll-tip @click.native="scroll"></scroll-tip>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -30,6 +31,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .works {
   display: flex;
@@ -90,11 +92,13 @@ h2 {
 </style>
 
 <script>
+import scrollable from "~/mixins/scrollable";
 export default {
+  mixins: [scrollable],
   data: () => ({
     active: null,
 
-    colors: ["#eee", "#ccc", "#999", "#666", "#333", "#000"],
+    colors: ["#eee", "#ccc", "#999", "#666", "#333"],
     rawWorks: [
       {
         name: "#eee"
@@ -110,16 +114,11 @@ export default {
       },
       {
         name: "#333"
-      },
-      {
-        name: "#000"
       }
     ]
   }),
   computed: {
     works() {
-      console.log(this.rawWorks);
-
       let i = 0;
       return this.rawWorks.map(a => {
         const style = {
