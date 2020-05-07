@@ -1,20 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque&display=swap');
+
 @font-face {
   font-family: "GroteskBold";
   src: url("~assets/GroteskBold.woff") format('woff');
 }
 
+
 * {
   font-family: GroteskBold;
 }
 
+.grotesque {
+  font-family: 'Darker Grotesque', sans-serif;
+}
+
 a {
   color: #999;
-  text-decoration: none;
 }
 
 a:hover {
-  color: #999;
-  text-decoration: line-through;
+  text-decoration: underline;
+}
+
+.bg-dark {
+  background: #222;
+  color: #fff;
 }
 
 .x-large-text {

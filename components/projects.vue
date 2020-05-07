@@ -12,7 +12,9 @@
         class="work"
       >
         <div v-if="active == i">
-          <div class="name">{{w.name}}</div>
+          <nuxt-link to="/works/tutaca">
+            <div class="name">{{w.name}}</div>
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -101,7 +103,7 @@ export default {
     colors: ["#eee", "#ccc", "#999", "#666", "#333"],
     rawWorks: [
       {
-        name: "#eee"
+        name: "tutaca"
       },
       {
         name: "#ccc"
