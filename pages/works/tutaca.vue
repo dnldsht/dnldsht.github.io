@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <img :src="require('~/assets/tutaca/wireframe/desktop.png')" />
+    <img :src="require('~/assets/tutaca/wireframe/desktop.webp')" />
 
     <div class="p-10 flex bg-dark">
       <div class="text-lg">
@@ -31,7 +31,7 @@
         >tutaca was made during covid-19 pandemic to help shops with local deliveries and take-away</div>
       </div>
     </div>
-    <img :src="require('~/assets/tutaca/wireframe/mobile.png')" />
+    <img :src="require('~/assets/tutaca/wireframe/mobile.webp')" />
 
     <div class="p-10 flex text-xl justify-center bg-dark">
       <nuxt-link class="white" to="/">Next project</nuxt-link>

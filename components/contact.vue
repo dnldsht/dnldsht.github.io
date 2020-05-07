@@ -1,5 +1,5 @@
 <template>
-  <div id="contact" class="x-large-text dark">
+  <div id="contact" class="x-large-text bg-dark">
     <span v-animate="{value: 'bounceInLeft'}">
       you can contact me via
       <a href="mailto:dnld.sht@gmail.com">mail</a> or
