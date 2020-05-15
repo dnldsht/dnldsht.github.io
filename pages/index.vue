@@ -1,47 +1,32 @@
 <template>
-  <div class="fullpage-container">
-    <div ref="fullpage" class="fullpage-wp" v-fullpage="opts">
-      <intro class="page"></intro>
-      <projects class="page"></projects>
-      <contact class="page"></contact>
-    </div>
+  <div id="me" class="page container px-3 mx-auto flex flex-col justify-center">
+    <h1 class="x-large-text">
+      hi. my name is
+      <a href="#contact">donald</a>.
+    </h1>
+    <h2 class="x-large-text">im a front end developer that cares about design.</h2>
+
+    <scroll-tip @click.native="next"></scroll-tip>
   </div>
 </template>
-
-<style lang="css">
-.fullpage-container {
+<style>
+/* #me {
+  display: flex;
   position: absolute;
-}
+} */
 </style>
-<script>
-import Intro from "~/components/intro";
-import Contact from "~/components/contact";
-import Projects from "~/components/projects";
 
+<script>
+import scrollable from "~/mixins/scrollable";
 export default {
-  components: { Intro, Contact, Projects },
-  data() {
-    return {
-      index: 0,
-      opts: {
-        start: 0,
-        dir: "v",
-        duration: 300,
-        loop: false,
-        beforeChange: this.beforeChange,
-        afterChange: function(currentSlideEl, currenIndex) {}
-      }
-    };
-  },
+  mixins: [scrollable],
   methods: {
-    beforeChange(currentSlideEl, currenIndex, nextIndex) {
-      this.index = nextIndex;
-      console.log(this);
+    prev() {
+      this.$router.push("/");
     },
     next() {
-      this.$refs.fullpage.$fullpage.moveNext();
+      this.$router.push("/works");
     }
   }
 };
 </script>
-

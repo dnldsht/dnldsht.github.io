@@ -1,11 +1,15 @@
 <template>
-  <div class="scroll-tip flex justify-center">
+  <div class="scroll-tip flex flex-col">
+    <button>su</button>
+    <button class="mt-3">giu</button>
+  </div>
+  <!-- <div class="scroll-tip flex justify-end">
     <div class="btn mb-3 pb-1 cursor-pointer">
       <span>
         <span>SCROLL</span>
       </span>
     </div>
-  </div>
+  </div>-->
 </template>
 <style lang="scss" scoped>
 @mixin btn-border-slide($color, $hoverColor, $borderWidth, $time) {
@@ -71,9 +75,9 @@
 }
 
 .scroll-tip {
-  position: absolute;
+  position: fixed;
   z-index: 20;
-  bottom: 0;
-  width: 100%;
+  bottom: 1rem;
+  right: 1rem;
 }
 </style>

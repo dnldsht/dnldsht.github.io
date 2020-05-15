@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <img :src="require('~/assets/tutaca/wireframe/desktop.webp')" />
+    <img class="desktop" :src="require('~/assets/tutaca/wireframe/desktop.webp')" />
 
     <div class="p-10 flex bg-dark">
       <div class="text-lg">
@@ -43,6 +43,12 @@
 .white {
   color: white;
 }
+
+.desktop {
+  min-height: 300px;
+  object-fit: cover;
+}
+
 </style>
 <script>
 export default {};
