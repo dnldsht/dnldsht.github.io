@@ -1,15 +1,15 @@
 <template>
-  <div id="wrapper">
+  <section class="mx-auto container">
     <h2>my works.</h2>
-    <div class="works" @mouseleave="active = null">
+    <div @mouseleave="active = null" class="works">
       <div
         v-for="(w, i) in works"
-        :key="w.color"
-        :style="w.style"
+        :key="w.name"
+        v-animate="{value: 'zoomInLeft', delay: i*20}"
         :class="{'active':active == i }"
-        v-animate="{value: 'zoomInLeft', delay: i*50 }"
         @mouseover="active = i"
         class="work"
+        :style="w.style"
       >
         <div v-if="active == i">
           <nuxt-link to="/works/tutaca">
@@ -18,8 +18,8 @@
         </div>
       </div>
     </div>
-    <scroll-tip @click.native="scroll"></scroll-tip>
-  </div>
+    <scroll-tip @click.native="next"></scroll-tip>
+  </section>
 </template>
 <style lang="scss" scoped>
 h2 {
@@ -28,12 +28,13 @@ h2 {
   font-size: 3rem;
   margin-bottom: 4rem;
 }
-#wrapper {
+section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+  // padding-bottom: 20rem;
 }
 .works {
   display: flex;
@@ -94,6 +95,7 @@ h2 {
 </style>
 
 <script>
+import Velocity from "velocity-animate";
 import scrollable from "~/mixins/scrollable";
 export default {
   mixins: [scrollable],
@@ -133,7 +135,12 @@ export default {
 
         return { ...a, style };
       });
+    },
+    visible() {
+      console.log(this.$parent.index == 1);
+      return this.$parent.index == 1;
     }
-  }
+  },
+  methods: {}
 };
 </script>

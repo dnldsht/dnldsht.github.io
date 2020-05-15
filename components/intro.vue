@@ -1,18 +1,17 @@
 <template>
-  <div id="me" class="container px-3 flex flex-col justify-center">
+  <section class="container px-3 mx-auto flex flex-col justify-center">
     <h1 class="x-large-text">
       hi. my name is
       <a href="#contact">donald</a>.
     </h1>
     <h2 class="x-large-text">im a front end developer that cares about design.</h2>
 
-    <scroll-tip @click.native="scroll"></scroll-tip>
-  </div>
+    <scroll-tip @click.native="next"></scroll-tip>
+  </section>
 </template>
-<style >
-#me {
+<style scoped>
+section {
   display: flex;
-  position: relative;
 }
 </style>
 

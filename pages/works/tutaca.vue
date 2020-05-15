@@ -21,7 +21,9 @@
         </div>
       </div>
     </div>
-    <img class="desktop" :src="require('~/assets/tutaca/wireframe/desktop.webp')" />
+    <div class="aspect-box" style="--ratio: calc(7157 / 5090)">
+      <img class="desktop" :src="require('~/assets/tutaca/wireframe/desktop.webp')" />
+    </div>
 
     <div class="p-10 flex bg-dark">
       <div class="text-lg">
@@ -31,7 +33,9 @@
         >tutaca was made during covid-19 pandemic to help shops with local deliveries and take-away</div>
       </div>
     </div>
-    <img :src="require('~/assets/tutaca/wireframe/mobile.webp')" />
+    <div class="aspect-box" style="--ratio:calc(7157 / 3421)">
+      <img :src="require('~/assets/tutaca/wireframe/mobile.webp')" />
+    </div>
 
     <div class="p-10 flex text-xl justify-center bg-dark">
       <nuxt-link class="white" to="/">Next project</nuxt-link>
@@ -45,10 +49,9 @@
 }
 
 .desktop {
-  min-height: 300px;
+  // min-height: 300px;
   object-fit: cover;
 }
-
 </style>
 <script>
 export default {};

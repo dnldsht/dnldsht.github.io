@@ -24,7 +24,7 @@ export default {
   */
   css: [
     '~/assets/reset.css',
-    '~/assets/style.css',
+    '~/assets/style.scss',
   ],
   /*
   ** Plugins to load before mounting the App
@@ -37,6 +37,7 @@ export default {
   */
   buildModules: [
     '@nuxtjs/tailwindcss',
+    'nuxt-purgecss'
   ],
 
   tailwindcss: {
@@ -50,8 +51,13 @@ export default {
   */
   modules: [
 
-
   ],
+
+  purgeCSS: {
+    mode: 'postcss',
+    // enabled: true,
+    whitelist: ['anim', 'fullpage-wp-h'],
+  },
   /*
   ** Build configuration
   */
