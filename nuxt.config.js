@@ -56,7 +56,7 @@ export default {
   purgeCSS: {
     mode: 'postcss',
     // enabled: true,
-    whitelist: ['anim', 'fullpage-wp-h'],
+    whitelist: ['anim', 'fullpage-wp-h', 'animated'],
   },
   /*
   ** Build configuration
