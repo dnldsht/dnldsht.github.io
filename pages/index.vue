@@ -2,8 +2,7 @@
   <div class="fullpage-container">
     <div class="fullpage-wp" v-fullpage="opts" ref="fullpage">
       <intro class="page"></intro>
-      <projects class="page"></projects>
-
+      <works class="page"></works>
       <contact class="page"></contact>
     </div>
   </div>
@@ -21,29 +20,33 @@
 <script>
 import Intro from "~/components/intro";
 import Contact from "~/components/contact";
-import Projects from "~/components/projects";
+import Works from "~/components/works";
 
 export default {
-  components: { Intro, Contact, Projects },
+  components: { Intro, Contact, Works },
   data() {
     return {
-      index: 0,
       opts: {
-        start: 0,
-        dir: "v",
         duration: 300,
-        loop: false,
-        beforeChange: this.beforeChange,
-        afterChange: function(currentSlideEl, currenIndex) {}
+        afterChange: this.changed
       }
     };
   },
+  computed: {
+    fullpage() {
+      return this.$refs.fullpage.$fullpage;
+    }
+  },
+  mounted() {
+    const start = this.$store.state.indexFullPage;
+    if (start) setTimeout(() => this.fullpage.moveTo(start, true), 0);
+  },
   methods: {
-    beforeChange(currentSlideEl, currenIndex, nextIndex) {
-      this.index = nextIndex;
+    changed(currentSlideEl, i) {
+      this.$store.commit("setIndexFullPage", i);
     },
     next() {
-      this.$refs.fullpage.$fullpage.moveNext();
+      this.fullpage.moveNext();
     }
   }
 };
