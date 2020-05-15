@@ -101,44 +101,52 @@ export default {
   mixins: [scrollable],
   data: () => ({
     active: null,
-
-    colors: ["#eee", "#ccc", "#999", "#666", "#333"],
     rawWorks: [
       {
-        name: "tutaca"
+        name: "tutaca",
+        style: {
+          backgroundColor: "#eee",
+          color: "#333"
+        }
       },
       {
-        name: "#ccc"
+        name: "#ccc",
+        style: {
+          backgroundColor: "#ccc",
+          color: "#666"
+        }
       },
       {
-        name: "#999"
+        name: "#999",
+        style: {
+          backgroundColor: "#999",
+          color: "#eee"
+        }
       },
       {
-        name: "#666"
+        name: "#666",
+        style: {
+          backgroundColor: "#666",
+          color: "#eee"
+        }
       },
       {
-        name: "#333"
+        name: "#333",
+        style: {
+          backgroundColor: "#333",
+          color: "#eee"
+        }
       }
     ]
   }),
   computed: {
     works() {
-      let i = 0;
-      return this.rawWorks.map(a => {
-        const style = {
-          "background-color": this.colors[i],
-          color: this.colors[this.colors.length - i - 1]
-        };
-        const d = this.active != null ? Math.abs(this.active - i) : 1;
-        style["flex-shrink"] = d;
-        i++;
-
-        return { ...a, style };
+      return this.rawWorks.map((a, i) => {
+        const { style } = a;
+        const distance = Math.abs(this.active - i);
+        style["flex-shrink"] = distance;
+        return a;
       });
-    },
-    visible() {
-      console.log(this.$parent.index == 1);
-      return this.$parent.index == 1;
     }
   },
   methods: {}

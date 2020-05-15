@@ -2,8 +2,8 @@
   <section id="contact" class="page x-large-text bg-dark">
     <span v-animate="{value: 'bounceInLeft'}">
       you can contact me via
-      <a href="mailto:dnld.sht@gmail.com">mail</a> or
-      <a href="https://www.linkedin.com/in/donald-sh">linkedin</a>.
+      <a class="grey" href="mailto:dnld.sht@gmail.com">mail</a> or
+      <a class="grey" href="https://www.linkedin.com/in/donald-sh">linkedin</a>.
     </span>
   </section>
 </template>
@@ -23,19 +23,3 @@
   }
 }
 </style>
-<script>
-import scrollable from "~/mixins/scrollable";
-export default {
-  computed: {
-    visible() {
-      return this.$parent.index == 2;
-    }
-  },
-  // mixins: [scrollable],
-  methods: {
-    prev() {
-      this.$router.push("/works");
-    }
-  }
-};
-</script>
