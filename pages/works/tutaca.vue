@@ -2,7 +2,11 @@
   <div>
     <div class="header flex flex-col">
       <div class="p-10 text-right">
-        <h1 class="x-large-text mb-2">tutaca</h1>
+        <div class="flex items-center">
+          <button-works></button-works>
+          <h1 class="ml-auto x-large-text mb-2">tutaca</h1>
+        </div>
+
         <a class="link text-xl" href="https://tutaca.it/">Visit website</a>
       </div>
 
@@ -22,7 +26,11 @@
       </div>
     </div>
     <div class="aspect-box" style="--ratio: calc(7157 / 5090)">
-      <img class="desktop" :src="require('~/assets/tutaca/wireframe/desktop.webp')" />
+      <img
+        loading="lazy"
+        alt="destop screenshots"
+        :src="require('~/assets/tutaca/wireframe/desktop.webp')"
+      />
     </div>
 
     <div class="p-10 flex bg-dark">
@@ -34,7 +42,11 @@
       </div>
     </div>
     <div class="aspect-box" style="--ratio:calc(7157 / 3421)">
-      <img :src="require('~/assets/tutaca/wireframe/mobile.webp')" />
+      <img
+        loading="lazy"
+        alt="mobile screenshots"
+        :src="require('~/assets/tutaca/wireframe/mobile.webp')"
+      />
     </div>
 
     <div class="p-10 flex text-xl justify-center bg-dark">
@@ -44,15 +56,18 @@
 </template>
 
 <style lang="scss" scoped>
+.top-right {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
 .white {
   color: white;
 }
-
-.desktop {
-  // min-height: 300px;
-  object-fit: cover;
-}
 </style>
 <script>
-export default {};
+import ButtonWorks from "~/components/button-works";
+export default {
+  components: { ButtonWorks }
+};
 </script>

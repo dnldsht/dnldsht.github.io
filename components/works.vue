@@ -11,11 +11,11 @@
         class="work"
         :style="w.style"
       >
-        <div v-if="active == i">
-          <nuxt-link to="/works/tutaca">
-            <div class="name">{{w.name}}</div>
-          </nuxt-link>
-        </div>
+        <nuxt-link
+          class="link flex justify-center items-center"
+          v-if="active == i"
+          :to="w.link"
+        >{{w.name}}</nuxt-link>
       </div>
     </div>
     <scroll-tip @click.native="next"></scroll-tip>
@@ -76,14 +76,16 @@ section {
   cursor: pointer;
 
   height: 100%;
-  transition: all 0.15s ease-in-out;
+  transition: all 0.15s;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
   flex-basis: 70px;
 
-  .name {
+  .link {
+    width: 100%;
+    height: 100%;
     font-size: 140%;
   }
 }
@@ -100,24 +102,27 @@ import scrollable from "~/mixins/scrollable";
 export default {
   mixins: [scrollable],
   data: () => ({
-    active: null,
+    active: 1,
     rawWorks: [
       {
         name: "tutaca",
+        link: "works/tutaca",
         style: {
           backgroundColor: "#eee",
           color: "#333"
         }
       },
       {
-        name: "#ccc",
+        name: "leafpic",
+        link: "works/tutaca",
         style: {
           backgroundColor: "#ccc",
-          color: "#666"
+          color: "#333"
         }
       },
       {
-        name: "#999",
+        name: "parkall",
+        link: "works/tutaca",
         style: {
           backgroundColor: "#999",
           color: "#eee"
@@ -125,6 +130,7 @@ export default {
       },
       {
         name: "#666",
+        link: "works/tutaca",
         style: {
           backgroundColor: "#666",
           color: "#eee"
@@ -132,6 +138,7 @@ export default {
       },
       {
         name: "#333",
+        link: "works/tutaca",
         style: {
           backgroundColor: "#333",
           color: "#eee"
