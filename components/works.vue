@@ -102,7 +102,7 @@ import scrollable from "~/mixins/scrollable";
 export default {
   mixins: [scrollable],
   data: () => ({
-    active: 1,
+    active: null,
     rawWorks: [
       {
         name: "tutaca",
@@ -114,7 +114,7 @@ export default {
       },
       {
         name: "leafpic",
-        link: "works/tutaca",
+        link: "works/todo",
         style: {
           backgroundColor: "#ccc",
           color: "#333"
@@ -122,7 +122,7 @@ export default {
       },
       {
         name: "parkall",
-        link: "works/tutaca",
+        link: "works/todo",
         style: {
           backgroundColor: "#999",
           color: "#eee"
@@ -130,7 +130,7 @@ export default {
       },
       {
         name: "#666",
-        link: "works/tutaca",
+        link: "works/todo",
         style: {
           backgroundColor: "#666",
           color: "#eee"
@@ -138,7 +138,7 @@ export default {
       },
       {
         name: "#333",
-        link: "works/tutaca",
+        link: "works/todo",
         style: {
           backgroundColor: "#333",
           color: "#eee"
