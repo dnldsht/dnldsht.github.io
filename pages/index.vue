@@ -21,6 +21,7 @@
 import Intro from "~/components/intro";
 import Contact from "~/components/contact";
 import Works from "~/components/works";
+import Vue from "vue";
 
 export default {
   components: { Intro, Contact, Works },
@@ -43,8 +44,8 @@ export default {
     },
     keyUpHandler(e) {
       const code = e.keyCode;
-      if (code === 40) this.next();
-      else if (code === 38) this.prev();
+      if (code === 40 /* down */) this.next();
+      else if (code === 38 /* up */) this.prev();
     },
     next() {
       this.fullpage.moveNext();
