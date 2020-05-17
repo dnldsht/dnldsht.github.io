@@ -37,17 +37,29 @@ export default {
       return this.$refs.fullpage.$fullpage;
     }
   },
-  mounted() {
-    const start = this.$store.state.indexFullPage;
-    if (start) setTimeout(() => this.fullpage.moveTo(start, true), 0);
-  },
   methods: {
     changed(currentSlideEl, i) {
       this.$store.commit("setIndexFullPage", i);
     },
+    keyUpHandler(e) {
+      const code = e.keyCode;
+      if (code === 40) this.next();
+      else if (code === 38) this.prev();
+    },
     next() {
       this.fullpage.moveNext();
+    },
+    prev() {
+      this.fullpage.movePrev();
     }
+  },
+  mounted() {
+    window.addEventListener("keyup", this.keyUpHandler);
+    const start = this.$store.state.indexFullPage;
+    if (start) setTimeout(() => this.fullpage.moveTo(start, true), 0);
+  },
+  beforeDestroy() {
+    window.removeEventListener("keyup", this.keyUpHandler);
   }
 };
 </script>
