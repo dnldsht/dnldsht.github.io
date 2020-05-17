@@ -1,30 +1,5 @@
 <template>
-  <div>
-    <div class="header flex flex-col">
-      <div class="p-10 text-right">
-        <div class="flex items-center">
-          <button-works></button-works>
-          <h1 class="ml-auto x-large-text mb-2">tutaca</h1>
-        </div>
-
-        <a class="link text-xl" href="https://tutaca.it/">Visit website</a>
-      </div>
-
-      <div class="p-10 flex bg-dark flex-row mt-auto items-end">
-        <div class="text-lg mr-5">
-          <div class="mb-2">Category</div>
-          <div class="grotesque">Web design</div>
-        </div>
-        <div class="text-lg mr-5">
-          <div class="mb-2">Role</div>
-          <div class="grotesque">Design / Code</div>
-        </div>
-        <div class="text-lg">
-          <div class="mb-2">Date</div>
-          <div class="grotesque">March, 2020</div>
-        </div>
-      </div>
-    </div>
+  <work-page :params="params">
     <div class="aspect-box" style="--ratio: calc(7157 / 5090)">
       <img
         loading="lazy"
@@ -48,26 +23,23 @@
         :src="require('~/assets/tutaca/wireframe/mobile.webp')"
       />
     </div>
-
-    <div class="p-10 flex text-xl justify-center bg-dark">
-      <nuxt-link class="white" to="/">Next project</nuxt-link>
-    </div>
-  </div>
+  </work-page>
 </template>
 
-<style lang="scss" scoped>
-.top-right {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-}
-.white {
-  color: white;
-}
-</style>
+
 <script>
-import ButtonWorks from "~/components/button-works";
+import WorkPage from "~/components/work-page";
 export default {
-  components: { ButtonWorks }
+  components: { WorkPage },
+  data: () => ({
+    params: {
+      title: "tutaca",
+      url: "https://tutaca.it/",
+      category: "Web design",
+      role: "Code / Design",
+      date: "March 2020",
+      nextProject: "/works/leafpic"
+    }
+  })
 };
 </script>
